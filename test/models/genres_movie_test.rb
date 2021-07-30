@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MovieTest < ActiveSupport::TestCase
+class GenresMovieTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
