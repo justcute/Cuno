@@ -1,3 +1,7 @@
+<% if season.image.attached? %>
+  <image src="<%=(url_for(season.image))%>">
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= season.title %>

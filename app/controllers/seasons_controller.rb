@@ -1,5 +1,5 @@
 class SeasonsController < ApplicationController
-	def create
+  def create
     @show = Show.find(params[:show_id])
     @season = @show.seasons.create(season_params)
     redirect_to show_path(@show)
@@ -13,7 +13,8 @@ class SeasonsController < ApplicationController
   end
 
   private
-    def season_params
-      params.require(:season).permit(:title, :description, :date)
-    end
+
+  def season_params
+    params.require(:season).permit(:title, :description, :date, :image)
+  end
 end

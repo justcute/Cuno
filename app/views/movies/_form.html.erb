@@ -46,6 +46,8 @@
     <%= form.select :country, Movie.countries.keys %>
   </div>
 
+  <%= form.file_field :image%>
+
   <div class="actions">
     <%= form.submit %>
   </div>

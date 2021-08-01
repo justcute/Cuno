@@ -1,3 +1,0 @@
-# Rubocop custom configuration
-Style/FrozenStringLiteralComment:
-  Enabled: false

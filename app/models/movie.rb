@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  has_one_attached :image
   enum country: Countries::CODES, _suffix: true
   enum sertification: Specifications::CODES
 

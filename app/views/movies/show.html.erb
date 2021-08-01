@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if @movie.image.attached? %>
+  <image src="<%=(url_for(@movie.image))%>">
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @movie.title %>
