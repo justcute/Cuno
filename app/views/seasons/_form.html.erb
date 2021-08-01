@@ -1,0 +1,17 @@
+<%= form_with model: [ @show, @show.seasons.build ] do |form| %>
+    <div class="field">
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
+    <div class="field">
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+    </div>
+    <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+    </div>
+    <div class="field">
+      <%= form.submit %>
+    </div>
+  <% end %>

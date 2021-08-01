@@ -1,0 +1,20 @@
+<p>
+  <strong>Title:</strong>
+  <%= season.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= season.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= season.date %>
+</p>
+
+<p>
+  <%= link_to 'Destroy season', [season.show, season],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+</p>

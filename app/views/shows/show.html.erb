@@ -35,5 +35,11 @@
   <%= @show.country %>
 </p>
 
+<h2>seasons</h2>
+<%= render @show.seasons %>
+
+<h2>Add a season:</h2>
+<%= render 'seasons/form' %>
+
 <%= link_to 'Edit', edit_show_path(@show) %> |
 <%= link_to 'Back', shows_path %>

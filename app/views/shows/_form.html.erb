@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= form.label :sertification %>
-    <%= form.number_field :sertification %>
+    <%= form.select :sertification, Movie.sertifications.keys %>
   </div>
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.number_field :country %>
+    <%= form.select :country, Movie.countries.keys %>
   </div>
 
   <div class="actions">
