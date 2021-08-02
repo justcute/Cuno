@@ -43,22 +43,22 @@ ActiveRecord::Schema.define(version: 2021_08_01_144127) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "genre_products", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_genre_products_on_genre_id"
+    t.index ["product_id"], name: "index_genre_products_on_product_id"
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "genres_movies", force: :cascade do |t|
-    t.bigint "movie_id", null: false
-    t.bigint "genre_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["genre_id"], name: "index_genres_movies_on_genre_id"
-    t.index ["movie_id"], name: "index_genres_movies_on_movie_id"
-  end
-
-  create_table "movies", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "trailer"
@@ -75,10 +75,19 @@ ActiveRecord::Schema.define(version: 2021_08_01_144127) do
     t.string "title"
     t.text "description"
     t.date "date"
-    t.bigint "movie_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["movie_id"], name: "index_seasons_on_movie_id"
+    t.index ["product_id"], name: "index_seasons_on_product_id"
+  end
+
+  create_table "tag_products", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_tag_products_on_product_id"
+    t.index ["tag_id"], name: "index_tag_products_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -87,20 +96,11 @@ ActiveRecord::Schema.define(version: 2021_08_01_144127) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tags_movies", force: :cascade do |t|
-    t.bigint "tag_id", null: false
-    t.bigint "movie_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["movie_id"], name: "index_tags_movies_on_movie_id"
-    t.index ["tag_id"], name: "index_tags_movies_on_tag_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "genres_movies", "genres"
-  add_foreign_key "genres_movies", "movies"
-  add_foreign_key "seasons", "movies"
-  add_foreign_key "tags_movies", "movies"
-  add_foreign_key "tags_movies", "tags"
+  add_foreign_key "genre_products", "genres"
+  add_foreign_key "genre_products", "products"
+  add_foreign_key "seasons", "products"
+  add_foreign_key "tag_products", "products"
+  add_foreign_key "tag_products", "tags"
 end

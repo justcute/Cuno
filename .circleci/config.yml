@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.0
+  rubocop: hanachin/rubocop@0.0.6
+
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:3.0.1-node
+    steps:
+      - checkout
+      - ruby/install-deps
+      - ruby/rspec-test
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - rubocop/rubocop 

@@ -4,7 +4,7 @@ class CreateSeasons < ActiveRecord::Migration[6.1]
       t.string :title
       t.text :description
       t.date :date
-      t.belongs_to :movie, null: false, foreign_key: true
+      t.belongs_to :product, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,4 +1,4 @@
 class Genre < ApplicationRecord
-  has_many :genres_movies, dependent: :destroy
-  has_many :movies, through: :genres_movies
+  has_many :genre_products, dependent: :destroy
+  has_many :products, through: :genre_products
 end

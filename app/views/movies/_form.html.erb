@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= form.label :sertification %>
-    <%= form.select :sertification, Movie.sertifications.keys %>
+    <%= form.select :sertification, Product.sertifications.keys %>
   </div>
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.select :country, Movie.countries.keys %>
+    <%= form.select :country, Product.countries.keys %>
   </div>
 
   <%= form.file_field :image%>

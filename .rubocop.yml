@@ -1,0 +1,12 @@
+# Rubocop custom configuration
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - "bin/bundle"
+    - "db/schema.rb"
+    - "test/controllers/*"
+    - "db/migrate/*.active_storage.rb"

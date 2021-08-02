@@ -1,3 +1,9 @@
 class Specifications
-  CODES = %i[G PG PG-13 R NC-17].freeze
+  CODES = {
+    G: 1,
+    PG: 2,
+    "PG-13": 3,
+    R: 4,
+    "NC-17": 5
+  }.freeze
 end
