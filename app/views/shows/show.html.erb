@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<% if @show.image.attached? %>
+  <image src="<%=(url_for(@show.image))%>">
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @show.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @show.description %>
+</p>
+
+<p>
+  <strong>Trailer:</strong>
+  <%= @show.trailer %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @show.date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @show.duration %>
+</p>
+
+<p>
+  <strong>Sertification:</strong>
+  <%= @show.sertification %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @show.country %>
+</p>
+
+<h2>seasons</h2>
+<%= render @show.seasons %>
+
+<h2>Add a season:</h2>
+<%= render 'seasons/form' %>
+
+<%= link_to 'Edit', edit_show_path(@show) %> |
+<%= link_to 'Back', shows_path %>

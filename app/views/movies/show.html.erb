@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<% if @movie.image.attached? %>
+  <image src="<%=(url_for(@movie.image))%>">
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <strong>Trailer:</strong>
+  <%= @movie.trailer %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @movie.date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @movie.duration %>
+</p>
+
+<p>
+  <strong>Sertification:</strong>
+  <%= @movie.sertification %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @movie.country %>
+</p>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
