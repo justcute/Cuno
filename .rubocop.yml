@@ -10,3 +10,6 @@ AllCops:
     - "db/schema.rb"
     - "test/controllers/*"
     - "db/migrate/*.active_storage.rb"
+    - "db/migrate/20210804093624_devise_create_users.rb"
+    - "config/environments/development.rb"
+    - "config/environments/production.rb"
