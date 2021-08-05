@@ -1,8 +1,8 @@
+# rubocop:disable all
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  ActionMailer::Base.default_url_options[:host]
   ActionMailer::Base.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
