@@ -1,1 +1,5 @@
-<%= react_component 'AppName', name: 'Cuno', direction: 'movie' %>
+<%= react_component 'AppName', name: 'Cuno', direction: t('.direction') %>
+<ul>
+<li><%= link_to 'Русский', root_path(locale: :ru) %></li>
+<li><%= link_to 'English', root_path(locale: :en) %></li>
+</ul>

@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  static_pages:
+    index:
+      direction: 'movie portal'
