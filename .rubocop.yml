@@ -9,4 +9,4 @@ AllCops:
     - "bin/bundle"
     - "db/schema.rb"
     - "test/controllers/*"
-    - "db/migrate/*.active_storage.rb"
+  

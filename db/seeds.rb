@@ -5,3 +5,14 @@
 #
 #   products = Product.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', product: products.first)
+15.times do |n|
+  email = "example-#{n + 1}@example.org"
+  password = 'password'
+  user = User.new(
+    email: email,
+    password: password,
+    password_confirmation: password
+  )
+  user.skip_confirmation!
+  user.save!
+end
