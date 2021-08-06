@@ -1,0 +1,22 @@
+<div class="bigbox">
+  <div class="box">
+    <table class="table table-hover">
+      <tbody>
+      <thead>
+        <tr>
+          <th scope="col">Mail</th>
+          <th scope="col">Role</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+        <% @users.each do |user| %>
+          <tr class="table-light">
+            <%= render user %>
+          </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
