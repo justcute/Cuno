@@ -1,0 +1,14 @@
+<th scope="row">
+  <%= user.email %>
+</th>
+<td>
+  <%= form_with model: [:admin, user] do |form| %>
+    <%= form.select(:role, User.roles.keys.map {|role| [role.titleize, role]}, {}, class:"form-select")%>
+    <td>
+      <%=form.submit 'Change role', class:"btn btn-outline-dark"%>
+    </td>
+  <%end%>
+</td>
+<td>
+  <%= link_to("Delete user", admin_user_url(user), :method => :delete, :class => "btn btn-outline-dark") unless user == current_user %>
+</td>
