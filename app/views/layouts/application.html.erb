@@ -7,27 +7,18 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
     <br>
-    <div class="container my-5">
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      <%= link_to('Edit registration', edit_user_registration_path) %>        
-    <% else %>
-      <%= link_to('Login', new_user_session_path) %> 
-      <%= link_to('Register', new_user_registration_path) %> 
-    <% end %>
-      <%= notice %>
-      <%= alert %>
-      <%= yield %>
+    <div class="container">
+        <%= notice %>
+        <%= alert %>
+        <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
