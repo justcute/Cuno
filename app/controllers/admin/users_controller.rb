@@ -1,7 +1,7 @@
 module Admin
   class UsersController < ApplicationController
     before_action :authenticate_user!
-    before_action :authorize, :user, only: %i[update destroy]
+    before_action :authorize_user, :user, only: %i[update destroy]
 
     def index
       authorize Admin, policy_class: AdminPolicy
@@ -23,7 +23,7 @@ module Admin
 
     private
 
-    def authorize
+    def authorize_user
       authorize @user, policy_class: AdminPolicy
     end
 
