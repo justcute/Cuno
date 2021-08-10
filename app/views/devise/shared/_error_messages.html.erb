@@ -1,5 +1,6 @@
 <% if resource.errors.any? %>
-  <div class="btn btn-danger disabled w-100">
+  <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
