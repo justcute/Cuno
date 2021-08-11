@@ -33,7 +33,9 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'rails-i18n'
 # Reduces boot times through caching; required in config/boot.rb
+gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'image_processing'
 gem 'pundit'
 gem 'react-rails'
 

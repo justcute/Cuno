@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                                     sessions: 'users/sessions' }
+
   resources :shows do
     resources :seasons
   end
+
   namespace :admin do
     resources :users
   end
+
+  namespace :api do
+    get 'products/index'
+  end
+
   resources :products, :movies
   root 'static_pages#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
