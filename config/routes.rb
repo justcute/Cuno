@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    get 'products/index'
+    get 'new_products', to: 'new_products#index'
+    get 'products_top', to: 'products_top#index'
   end
 
   resources :products, :movies

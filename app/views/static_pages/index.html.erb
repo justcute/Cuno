@@ -1,6 +1,9 @@
-<%= react_component 'AppName', name: 'Cuno', direction: t('.direction') %>
-<%= react_component 'App' %>
-<ul>
-<li><%= link_to 'Русский', root_path(locale: :ru) %></li>
-<li><%= link_to 'English', root_path(locale: :en) %></li>
-</ul>
+<div class="page-header">
+  <h1>Top rated</h1>
+</div>
+<%= react_component 'TopRated' %><br>
+
+<div class="page-header">
+  <h2>New on site</h2>
+</div>
+<%= react_component 'NewProducts' %><br>
